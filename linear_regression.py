@@ -11,7 +11,7 @@ df = pd.read_csv("FuelConsumption.csv")
 df.head()
 df.describe()
 
-print ('file: loaded'df.head())
+print ('file: loaded' )
 cdf = df[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_COMB','CO2EMISSIONS']]
 cdf.head(9)
 
