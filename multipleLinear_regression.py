@@ -19,7 +19,7 @@ print('~~ SIMPLE LINEAR REGRESSION'
 #plot emission values with respect to engine size:
 plt.scatter(cdf.ENGINESIZE, cdf.CO2EMISSIONS,  color='blue')
 plt.xlabel("Engine size")
-plt.ylabel("Emission")
+plt.ylabel("Co2 Emission")
 plt.title("MODEL:engine size => emission values")
 plt.show()
 
@@ -38,8 +38,8 @@ print('TRAIN/TEST: datasets created'
 #Train data distribution
 plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS,  color='blue')
 plt.xlabel("Engine size")
-plt.ylabel("Emission")
-plt.title('TRAIN:enginesize=>co2emissions : data plotted')
+plt.ylabel("Co2 Emission")
+plt.title('TRAINING:enginesize : Co2 Emissions')
 plt.show()
 
 
@@ -48,8 +48,11 @@ print('~~~~~~~MULTIPLE REGRESSION MODEL'
 #Multiple Regression Model
 from sklearn import linear_model
 regr = linear_model.LinearRegression()
+print('Linear Model loaded')
 x = train[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_COMB']]
 y = train[['CO2EMISSIONS']]
+
+print('Training loaded for Enginesize, cylindes, fuel consumption combination')
 regr.fit (x, y)
 print('MODEL:=>', 'INDEPENDANTS (X):ENGINESIZE','CYLINDERS','FUELCONSUMPTION_COMB'
       'DEPENDANT(y): Co2Emissions')
@@ -64,7 +67,7 @@ y = test[['CO2EMISSIONS']]
 print("Mean Squared Error (MSE) : %.2f"
       % np.mean((y_hat - y) ** 2))
 # Plotting the actual vs predicted values
-plt.scatter(y, y_hat, color='blue')
+plt.scatter(y, y_hat, color='red')
 plt.xlabel("Actual values")
 plt.ylabel("Predicted values")
 plt.title("Actual vs Predicted CO2 Emissions")
