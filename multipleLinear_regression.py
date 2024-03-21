@@ -67,7 +67,8 @@ y = test[['CO2EMISSIONS']]
 print("Mean Squared Error (MSE) : %.2f"
       % np.mean((y_hat - y) ** 2))
 # Plotting the actual vs predicted values
-plt.scatter(y, y_hat, color='red')
+plt.scatter(y, y_hat, color='blue')
+plt.plot(y_hat, color='red')
 plt.xlabel("Actual values")
 plt.ylabel("Predicted values")
 plt.title("Actual vs Predicted CO2 Emissions")
