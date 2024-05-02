@@ -95,3 +95,5 @@ regr.fit(train_x, train_y)
 predictions = regr.predict(test_x)
 
 print("Mean Absolute Error: %.2f" % np.mean(np.absolute(predictions - test_y)))
+
+print("~~~~~~~~~~End of Lined~~~~~~~~~~")
